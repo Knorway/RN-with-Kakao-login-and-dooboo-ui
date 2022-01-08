@@ -74,8 +74,12 @@ const LoginScreen = () => {
   };
 
   const unlinkKakao = async () => {
-    const response = await unlink();
-    console.log(response);
+    try {
+      const response = await unlink();
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
