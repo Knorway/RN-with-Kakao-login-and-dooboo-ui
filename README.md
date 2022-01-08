@@ -32,12 +32,12 @@
 ## kakao 로그인 구현
 - iOS 적용 성공. login() 함수는 token을 리턴하고 getProfile() 함수는 login함수가 정상적으로 실행되었었다면 유저 프로파일을 클라이언트 단에서 바로 가져올 수 있다.
 
-- AppDelegate.m 파일 설정 해당 코드 추가가 지금 당장 내 환경(Bare Expo)에서 필요한지는 일단 두고보자
+- [AppDelegate.m](https://github.com/react-native-seoul/react-native-kakao-login/issues/193#issuecomment-806475082) 파일 설정 해당 코드 추가가 지금 당장 내 환경(Bare Expo)에서 필요한지는 일단 두고보자
 
 - TODO: 안드로이드 및 카카오톡에 로그인 된 상태에서 되는지
 
 - android 빌드 중 문제가 생겼다. 저번에 ios도 문제가 생겨서 빌드 폴더를 다 지우고 해결했었는데(m1 mac 문제) 추가로 작성됐던 네이티브 코드를 다시 설정하는 것도 어려웠고
-이번에는 안드로이드 스튜디오에서 gradle버전을 올려버린 게 문제가 된 거 같다. expo환경에서는 하면 안되는 행동인듯.
+이번에는 안드로이드 스튜디오에서 gradle버전을 올려버린 게 문제가 된 거 같다. expo환경에서는 하면 안되는 행동인듯. React Native에서 무언가 설치하기 전에 커밋하는 습관을 들여야겠다.
 expo가 뭔가 더 불투명한 부분이 많은 것 같아 React Native CLI로 다시 프로젝트 생성해서 진행한다.
 이거저거 깨먹으면서 배우는 게 많기는 하다.
 
@@ -53,4 +53,4 @@ expo가 뭔가 더 불투명한 부분이 많은 것 같아 React Native CLI로 
 에러 로그를 잃어본 결과 adv/advance setting의 internal storage 용량을 20GB이상 줘서 해결
 다만 픽셀 2, 4 버전에서는 일어나지 않는 오류라(API 31) 그냥 픽셀4로 개발하기로 일단
 
-- 실기기(LG V40)연걸 후 테스트 완료. 카카오톡 로그인 된 상태에서 절차 생략하고 바로 르그인 가능하다
+- 실기기(LG V40)연걸 후 테스트 완료. 카카오톡 로그인 된 상태에서 절차 생략하고 바로 로그인 가능하다
