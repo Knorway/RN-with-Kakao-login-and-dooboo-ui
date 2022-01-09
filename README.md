@@ -5,19 +5,19 @@
 
 - 설정 과정에서 문제가 많았지만 일단 arm환경의 문제인 것 같아 pod install을 수반하는 설치시 arch -x86_64 커맨드를 붙여서 셋업
 
-- RCTBridge required dispatch_sync to load RCTDevLoadingView. This may lead to deadlocks 문제가 자꾸 발생. ios/AppDelegate.m 파일 수정
+- [RCTBridge required dispatch_sync to load RCTDevLoadingView. This may lead to deadlocks](https://github.com/facebook/react-native/issues/16376) 문제가 자꾸 발생. ios/AppDelegate.m 파일 수정
 
 ## 웹과 모바일의 로그인/OAuth 플로우 차이점 파악하기
 - 분명히 웹뷰를 사용하여 기존 웹(URI Redirect)과 같이 진행할 수 있어 보이지만 이미 카카오톡에 로그인 한 경우 등의 처리같은 인터랙션을 위해 모바일 환경에서는 클라이언트 사이드 SDK 사용이 먼저 고려된다고 일단 판단된다.
 
 - 현재 dooboo ui 설치에 에러가 있어서 로그인 기능을 먼저 만들고 파악하는 것을 시작
 
- - PR을 열었다.
+- [PR을 열었다](https://github.com/dooboolab/dooboo-ui/pull/174).
 
 - ~~(bare expo 환경이 아니라면 다를 수도 있지만 일단 주어진 시간 내에 우선순위를 고려해 일단 할 수 있는 것부터 하기로 하자)~~
 
 
-- PR이 merge 됐고 0.1.55 버전으로 올라감에 따라 설치가 가능해졌다. Yay!
+- [PR이 merge](https://github.com/dooboolab/dooboo-ui/pull/174) 됐고 0.1.55 버전으로 올라감에 따라 설치가 가능해졌다. Yay!
 
 ---
 
@@ -46,6 +46,7 @@ expo가 뭔가 더 불투명한 부분이 많은 것 같아 React Native CLI로 
 ## React Native CLI로 전환
 
 ## android 빌드 성공.
+
 - 온갖 오류가 발생했고 java, gradle 버전이며 여러가지 수정하면서 진행했지만 끝내 결정적이었던 건 kotlin 버전을 1.5.0으로 변경한 것
 
 - android AVD를 픽셀5로 올렸다가 또 엄청난 고통에 빠졌었다.
@@ -54,3 +55,5 @@ expo가 뭔가 더 불투명한 부분이 많은 것 같아 React Native CLI로 
 다만 픽셀 2, 4 버전에서는 일어나지 않는 오류라(API 31) 그냥 픽셀4로 개발하기로 일단
 
 - 실기기(LG V40)연걸 후 테스트 완료. 카카오톡 로그인 된 상태에서 절차 생략하고 바로 로그인 가능하다
+
+- 내가 프로젝트에서 어느정도의 역할을 맡게 될지 혹은 애초에 React Native 개발 업무가 주어질지는 모르겠지만 하게 된다면 네이티브 android, ios 아주 작은 프로젝트라도 진행해보는 게 매우 중요하다고 생각된다. 문제가 생길 때마다 검색해서 해결하곤 하는데 무엇이 문제였는지 알고 싶고 이해 없이 설정 코드를 붙여넣는 모습이 내가 너무 보기 싫다.
